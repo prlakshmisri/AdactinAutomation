@@ -134,13 +134,14 @@ public class BaseClass {
 		}
 	}
 
-	public static void takeScreenShot(String fileName) throws IOException {
+	public static File takeScreenShot(String fileName) throws IOException {
 
 		try {
-			File f = new File(System.getProperty("user.dir") + "\\Library\\" + fileName + ".png");
+			File f = new File(System.getProperty("user.dir") + "/src/resource/test/org/maven/reports/extentreport/screenshots/" + fileName + ".png");
 			TakesScreenshot ts = (TakesScreenshot) driver;
 			File temp = ts.getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(temp, f);
+			return f;
 		} catch (WebDriverException e) {
 			e.printStackTrace();
 			throw new RuntimeException();

@@ -25,5 +25,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="/Selenium/Library/selenium-server-standalone-3.141.59.jar"/>
+	<classpathentry kind="src" path="/AutomationMavenProject"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

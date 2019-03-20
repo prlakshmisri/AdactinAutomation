@@ -1,5 +1,6 @@
 package org.maven.stepdefinition;
 
+import java.io.File;
 import java.util.List;
 
 import org.cucumber.maven.AdactinHotel_Project.PageObjectManager;
@@ -10,6 +11,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
+import com.cucumber.listener.Reporter;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -275,6 +278,7 @@ public class AdactinStepDefinition extends BaseClass {
 	@When("^User enters first name$")
 	public void user_enters_first_name() throws Throwable {
 		inputValue(pm.getBhp().getFirstName(), "Lakshmi");
+		Reporter.addScenarioLog("Lakshmi");
 	}
 
 	@When("^User enters last name$")
@@ -505,13 +509,16 @@ public class AdactinStepDefinition extends BaseClass {
 	public void user_gets_the_order_id_no() throws Throwable {
 		bconOrderid = getAttribute(pm.getBcp().getOrderNo());
 		System.out.println(bconOrderid);
+		File takeScreenShot = BaseClass.takeScreenShot(bconOrderid);
+		Reporter.addScreenCaptureFromPath(takeScreenShot.getAbsolutePath());
+		Reporter.addStepLog(bconOrderid);
 		// setValuetoExcel("AdactinBookingItenary", "OrderNos", 2, 1, bconOrderid);
 	}
 
 	@When("^User clicks the My Itinerary button$")
 	public void user_clicks_the_My_Itinerary_button() throws Throwable {
 		List<WebElement> datas = driver.findElements(By.xpath("//form[@id='booking_form']/table//tr/td/input"));
-		for (int i = 0; i < datas.size(); i++) {
+		for (int i = 0; i < 15; i++) {
 			String values = getAttribute(datas.get(i));
 			System.out.println(values);
 			setValuetoExcel("AdactinBookingItenary", "BookingConfirmation", 1, i, values);

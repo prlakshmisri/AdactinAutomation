@@ -1,0 +1,10 @@
+-------------------------------------------------------------------------------
+Test set: org.maven.runner.TestRunner2
+-------------------------------------------------------------------------------
+Tests run: 9, Failures: 0, Errors: 2, Skipped: 5, Time elapsed: 101.04 sec <<< FAILURE! - in org.maven.runner.TestRunner2
+Then User should verify the Welcome to AdactIn Group of Hotels is displayed in the login page(Scenario: User verify for valid login credentials)  Time elapsed: 0.066 sec  <<< ERROR!
+java.lang.RuntimeException
+
+Scenario: User verify for valid login credentials  Time elapsed: 0.066 sec  <<< ERROR!
+java.lang.RuntimeException
+
