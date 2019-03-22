@@ -33,6 +33,10 @@
 						<groupId>org.apache.maven.plugins</groupId>
 						<version>2.19</version>
 						<artifactId>maven-surefire-plugin</artifactId>
+						<configuration>
+							<forkCount>2</forkCount>
+							<testFailureIgnore>false</testFailureIgnore>
+						</configuration>
 					</plugin>
 				</plugins>
 			</build>
@@ -57,7 +61,6 @@
 			<groupId>com.aventstack</groupId>
 			<artifactId>extentreports</artifactId>
 			<version>3.0.6</version>
-			<scope>provided</scope>
 		</dependency>
 
 		<dependency>

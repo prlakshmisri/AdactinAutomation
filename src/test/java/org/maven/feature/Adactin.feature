@@ -328,7 +328,7 @@ And User clicks the Logout button in home page
 
 Examples:
 |Hotel Name   |Location|Room Type	|Checkin Date|Checkout Date|No of Rooms	|No of Adults|No of Children|
-|"Hotel Creek"|"Sydney"|"Standard"|"15/03/2019"|"16/03/2019" |2 					|1					 |"No Children" |
+|"Hotel Creek"|"Sydney"|"Standard"|"18/04/2019"|"19/04/2019" |2 					|1					 |"No Children" |
 
 @TC14
 Scenario Outline: Verify Order number is generated in booking confirmation page
@@ -366,7 +366,7 @@ And User clicks the Logout button in home page
 
 Examples:
 |Hotel Name   |Location|Room Type	|Checkin Date|Checkout Date|No of Rooms	|No of Adults|
-|"Hotel Creek"|"Sydney"|"Standard"|"18/03/2019"|"19/03/2019" |2 					|1					 |
+|"Hotel Creek"|"Sydney"|"Standard"|"18/04/2019"|"19/04/2019" |2 					|1					 |
 
 @TC17
 Scenario Outline: User to verify that search order id is working or not
@@ -423,4 +423,4 @@ And User clicks the Logout button in home page
 
 Examples:
 |Hotel Name   |Location|Room Type	|Checkin Date|Checkout Date|No of Rooms	|No of Adults|
-|"Hotel Creek"|"Sydney"|"Standard"|"18/03/2019"|"19/03/2019" |2 					|1					 |
+|"Hotel Creek"|"Sydney"|"Standard"|"18/04/2019"|"19/04/2019" |2 					|1					 |

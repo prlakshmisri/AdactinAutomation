@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.cucumber.maven.AdactinHotel_Project.PageObjectManager;
 import org.junit.Assert;
+import org.maven.helper.FileReaderManager;
 import org.maven.runner.TestRunner;
 import org.maven.test.BaseClass;
 import org.openqa.selenium.By;
@@ -29,8 +30,11 @@ public class AdactinStepDefinition extends BaseClass {
 	public static String bconOrderid;
 
 	@Given("^User should launch the browser$")
-	public void user_should_launch_the_browser() {
-		getUrl("https://adactin.com/HotelAppBuild2/");
+	public void user_should_launch_the_browser() throws Exception, Throwable {
+		//FileReaderManager.getInstance().getConfigReader().getbrowserName();
+
+		String url = FileReaderManager.getInstance().getConfigReader().getURL();
+		getUrl(url);
 
 	}
 
@@ -167,7 +171,7 @@ public class AdactinStepDefinition extends BaseClass {
 
 	@When("^User enter the today check-in date$")
 	public void user_enter_the_today_check_in_date() throws Throwable {
-		inputValue(pm.getHp().getCheckInDate(), "14/03/2019");
+		inputValue(pm.getHp().getCheckInDate(), "18/04/2019");
 		checkInDate = getAttribute(pm.getHp().getCheckInDate());
 		System.out.println(checkInDate);
 	}
@@ -175,7 +179,7 @@ public class AdactinStepDefinition extends BaseClass {
 	@When("^User enter the tomorrow check-out date$")
 	public void user_enter_the_tomorrow_check_out_date() throws Throwable {
 		elementClick(pm.getHp().getCheckOutDate());
-		inputValue(pm.getHp().getCheckOutDate(), "15/03/2019");
+		inputValue(pm.getHp().getCheckOutDate(), "19/04/2019");
 		checkOutDate = getAttribute(pm.getHp().getCheckOutDate());
 		System.out.println(checkOutDate);
 	}
